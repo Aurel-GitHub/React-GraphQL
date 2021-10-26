@@ -1,31 +1,13 @@
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import React from "react";
 import "./App.css";
-import { useState } from "react";
-import { User } from './models/User';
+import CreateUser from "./Components/CreateUser/CreateUser";
+import ListOfUser from "./Components/ListOfUser/ListOfUser";
 
-function App() {
-  const [firstname, setFirstname] = useState<String>('');
-  const [lastname, setLastname] = useState<String>('');
-  const [email, setEmail] = useState<String>('');
-  const [password, setPassword] = useState<String>('');
-  const client = new ApolloClient({
-    uri: "http://localhost:3003/graphql",
-    cache: new InMemoryCache(),
-  });
-
-
+export default function App() {
   return (
-    <ApolloProvider client={client}>
-      <div className="createUser">
-        <h2 className="formTitle">Formulaire d'inscription</h2>
-        <input className="inputCreateAccount"type="text" placeholder="firstname" onChange={(e) => {setFirstname(e.target.value)}}/>
-        <input className="inputCreateAccount"type="text" placeholder="lastname" onChange={(e) => {setLastname(e.target.value)}}/>
-        <input className="inputCreateAccount"type="email" placeholder="email" onChange={(e) => {setEmail(e.target.value)}}/>
-        <input className="inputCreateAccount"type="password" placeholder="password" onChange={(e) => {setPassword(e.target.value)}}/>
-        <button className="buttonCreateAccount" >Create account</button>
-      </div>
-    </ApolloProvider>
+    <div className="app">
+      <CreateUser />
+      <ListOfUser />
+    </div>
   );
 }
-
-export default App;
