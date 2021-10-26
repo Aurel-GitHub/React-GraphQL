@@ -14,7 +14,7 @@ export default function ListOfUser() {
             <div 
             className="listOfUser"
             key={user.id}>
-              {user.firstname} - {user.lastname}{" "}
+              {user.firstname} - {user.lastname}
             </div>
           );
         })}
