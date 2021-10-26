@@ -10,7 +10,7 @@ export default function CreateUser() {
   const [password, setPassword] = useState<String>("");
 
   const [createUser, {error}] = useMutation(CREATE_USER);
-
+  if (error) return <h1>{error}</h1>
   return (
     <div>
       <div className="createUser">

@@ -9,7 +9,7 @@ export default function UpdateUser() {
   const [newpassword, setNewpassword] = useState("");
 
   const [updatePassword, {error}] = useMutation(UPDATE_PASSWORD);
-
+    if (error) return <h1>{error}</h1>
   return (
     <div className="updateUser">
       <h2 className="formUpdateTitle">Modifier utilisateur</h2>

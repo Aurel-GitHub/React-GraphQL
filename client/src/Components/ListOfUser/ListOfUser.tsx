@@ -6,9 +6,9 @@ import "./ListOfUser.css";
 
 export default function ListOfUser() {
   const { data } = useQuery(GET_ALL_USERS);
-  const [deleteUser] = useMutation(DELETE_USER);
+  const [deleteUser, {error}] = useMutation(DELETE_USER);
   if (data) console.warn("=== DATA LOADED ===", data);
-  
+  if (error) return <h1>{error}</h1>
   return (
     <div>
       {data &&
