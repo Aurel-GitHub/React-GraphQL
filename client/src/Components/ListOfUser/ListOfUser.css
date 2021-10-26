@@ -2,3 +2,19 @@
     margin: 5px 0px;
     text-align: center;
 }
+.btnDelete {
+    margin: 2px;
+    padding: 2px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.5ch;
+    border-radius: 0%;
+    border: solid transparent;
+    color: black;
+    background-color: white;
+}
+.btnDelete:hover {
+    transition-duration: 300ms;
+    background-color: black;
+    color: white;
+}

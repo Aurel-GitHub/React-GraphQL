@@ -9,7 +9,7 @@ export default function CreateUser() {
   const [email, setEmail] = useState<String>("");
   const [password, setPassword] = useState<String>("");
 
-  const [createUser] = useMutation(CREATE_USER);
+  const [createUser, {error}] = useMutation(CREATE_USER);
 
   return (
     <div>
