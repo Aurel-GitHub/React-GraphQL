@@ -3,7 +3,6 @@ import { graphqlHTTP } from "express-graphql";
 import { schema } from "./Schema";
 import cors from "cors";
 import { createConnection } from "typeorm";
-import { json } from "stream/consumers";
 import { User } from "./Entities/User";
 
 const main = async () => {
@@ -16,6 +15,7 @@ const main = async () => {
     synchronize: false,
     entities: [User],
   });
+
   const app = express();
   app.use(cors());
   app.use(express.json());
@@ -27,7 +27,7 @@ const main = async () => {
     })
   );
 
-  app.listen(process.env.PORT || 3001, () => {
+  app.listen(3003, () => {
     console.log("SERVER RUNNING");
   });
 };
